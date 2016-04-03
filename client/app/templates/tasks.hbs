@@ -1,0 +1,14 @@
+<h2>Tasks</h2>
+
+{{#each model as |task|}}
+<p>
+  <b>Feature: </b> 
+  {{#link-to 'revisions.features.feature' task.feature.id }}
+    {{task.feature.title}}
+  {{/link-to}}
+</p>
+<h3>{{task.title}}</h3>
+<p>{{task.body}}</p>
+{{/each}}
+
+{{outlet}}

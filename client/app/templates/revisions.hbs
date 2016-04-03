@@ -1,0 +1,14 @@
+<h1>Revisions</h1>  
+<ol>
+  {{#each model as |item|}}
+    <li>
+      {{item.title}}
+      <ol>
+        {{#each item.tasks as |task|}}
+        <li>{{task.title}}</li>
+        {{/each}}
+      </ol>
+    </li>
+  {{/each}}
+</ol>
+{{outlet}}

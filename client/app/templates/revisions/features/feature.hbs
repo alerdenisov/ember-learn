@@ -1,0 +1,10 @@
+<h3>Feature</h3>
+
+<h4>{{model.title}}</h4>
+<p>{{model.body}}</p>
+<ul>
+  {{#each model.tasks as |task|}}
+  <li>{{task.title}}</li>
+  {{/each}}
+</ul>
+{{outlet}}
