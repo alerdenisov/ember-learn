@@ -1,6 +1,6 @@
 /**
  * Get a random floating point number between `min` and `max`.
- * 
+ *
  * @param {number} min - min number
  * @param {number} max - max number
  * @return {float} a random floating point number
@@ -11,7 +11,7 @@ function getRandom(min, max) {
 
 /**
  * Get a random integer between `min` and `max`.
- * 
+ *
  * @param {number} min - min number
  * @param {number} max - max number
  * @return {int} a random integer
@@ -33,11 +33,11 @@ export default function(server) {
   // server.createList('post', 10);
 
   var makeChain = function(server) {
-    let t = server.createList('task', getRandomInt(1, 10));
-    let f = server.create('feature', { tasks: t });
-    // let f = server.create('feature');
-    // let t = server.createList('task', getRandomInt(1, 10), { feature: f });
-  }
+    // let t = server.createList('task', getRandomInt(1, 10));
+    // let f = server.create('feature', { tasks: t });
+    let f = server.create('feature');
+    let t = server.createList('task', getRandomInt(1, 10), { featureId: f.id });
+  };
 
   makeChain(server);
   makeChain(server);
